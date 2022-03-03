@@ -32,6 +32,8 @@ export interface OwnProps {
    *  (default: { opacity: 1, visibility: "visible" })
    */
   intersectingStyle: CSSProperties;
+
+  className?: string;
 }
 
 export type Props = OwnProps & Pick<IntersectionObserverOptions, "threshold">;

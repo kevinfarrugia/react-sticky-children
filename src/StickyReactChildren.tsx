@@ -17,6 +17,7 @@ export const StickyReactChildren: React.FC<Props> = ({
   initialStyle,
   intersectingStyle,
   children,
+  className,
 }) => {
   const style = initialStyle || defaultInitialStyle;
   const computedStyle = intersectingStyle || defaultIntersectingStyle;
@@ -71,7 +72,7 @@ export const StickyReactChildren: React.FC<Props> = ({
   return (
     <>
       <div ref={dummyElement} />
-      <section ref={stickyEl} style={style}>
+      <section ref={stickyEl} style={style} className={className}>
         <div>{children}</div>
       </section>
     </>
