@@ -1,45 +1,76 @@
 import * as React from "react";
+import { Props } from ".";
 
-export const StickyReactChildren = ({ themeColor1, themeColor2, children }) => {
-  const rubberDuckyEl = React.useRef(null);
-  const stickyEl = React.useRef(null);
+// defaults
+const defaultInitialStyle: React.CSSProperties = {
+  opacity: 0,
+  visibility: "hidden",
+};
 
-  const style: React.CSSProperties = React.useMemo(
-    () => ({
-      opacity: 0,
-      background: `linear-gradient(to bottom right, ${themeColor1}, ${themeColor2})`,
-      visibility: "hidden",
-    }),
-    [themeColor1, themeColor2]
-  );
+const defaultIntersectingStyle: React.CSSProperties = {
+  opacity: 1,
+  visibility: "visible",
+};
+
+export const StickyReactChildren: React.FC<Props> = ({
+  threshold,
+  initialStyle,
+  intersectingStyle,
+  children,
+}) => {
+  const style = initialStyle || defaultInitialStyle;
+  const computedStyle = intersectingStyle || defaultIntersectingStyle;
+
+  const keys = Object.keys(style)
+    .map((n) => {
+      if (Object.keys(computedStyle).indexOf(n) === -1) {
+        return n;
+      }
+      return null;
+    })
+    .filter((n) => n);
+
+  if (keys.length) {
+    throw new Error(
+      `Missing styles attributes ${keys.join(", ")} in intersectingStyle prop`
+    );
+  }
+
+  const dummyElement = React.useRef<HTMLDivElement>(null);
+  const stickyEl = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const visiblePct = entry.isIntersecting ? 0 : 1;
-          if (stickyEl && stickyEl.current) {
-            stickyEl.current.style = `visibility: ${
-              entry.isIntersecting ? "hidden" : "visible"
-            }; background: linear-gradient(to bottom right, ${themeColor1}, ${themeColor2}); opacity: ${visiblePct}`;
+          if (stickyEl.current) {
+            const { current } = stickyEl;
+
+            Object.keys(style).forEach((n) => {
+              const computedStyleRule = entry.isIntersecting
+                ? computedStyle[n]
+                : style[n];
+
+              current.style[n] = computedStyleRule;
+            });
           }
         });
       },
-      { threshold: 1 }
+      { threshold }
     );
 
-    if (rubberDuckyEl && rubberDuckyEl.current) {
-      observer.observe(rubberDuckyEl.current);
+    if (dummyElement && dummyElement.current) {
+      observer.observe(dummyElement.current);
     }
 
     return () => {
       observer.disconnect();
     };
-  }, [themeColor1, themeColor2]);
+  }, [computedStyle, style, threshold]);
 
   return (
     <>
-      <div ref={rubberDuckyEl} />
+      <div ref={dummyElement} />
       <section ref={stickyEl} style={style}>
         <div>{children}</div>
       </section>
