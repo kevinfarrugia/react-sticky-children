@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export { StickyReactChildren } from "./StickyReactChildren";
+export { StickyReactChildren } from "./ReactStickyChildren";
 
 export interface IntersectionObserverOptions extends IntersectionObserverInit {
   /** The IntersectionObserver interface's read-only `root` property identifies the Element or Document whose bounds are treated as the bounding box of the viewport for the element which is the observer's target. If the `root` is null, then the bounds of the actual document viewport are used. */

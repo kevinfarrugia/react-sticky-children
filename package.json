@@ -9,8 +9,11 @@
     "observer",
     "sticky"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "source": "src/index.tsx",
+  "main": "dist/react-sticky-children.cjs",
+  "module": "./dist/react-sticky-children.module.js",
+  "unpkg": "./dist/react-sticky-children.umd.js",
+  "types": "dist/react-sticky-children.d.ts",
   "sideEffects": false,
   "files": [
     "dist"
@@ -21,7 +24,7 @@
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "build": "tsc",
+    "build": "microbundle --name ReactStickyChildren --jsx React.createElement -f cjs,umd,es,modern",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
@@ -58,6 +61,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "7.0.4",
     "lint-staged": "12.3.4",
+    "microbundle": "^0.14.2",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "typescript": "^4.6.2"
