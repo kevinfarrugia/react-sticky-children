@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export const StickyReactChildren = ({ themeColor1, themeColor2, children }) => {
+      export const StickyReactChildren = ({ themeColor1, themeColor2, children }) => {
   const rubberDuckyEl = React.useRef(null);
   const stickyEl = React.useRef(null);
 
