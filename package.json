@@ -1,7 +1,7 @@
 {
   "name": "react-sticky-children",
   "version": "0.1.0",
-  "description": "ReactJS component that renders its children when a dummy element exits the viewport.",
+  "description": "ReactJS component that updates when another element intersects with the viewport.",
   "keywords": [
     "react",
     "component",

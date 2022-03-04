@@ -12,7 +12,7 @@ const defaultIntersectingStyle: React.CSSProperties = {
   visibility: "visible",
 };
 
-export const StickyReactChildren: React.FC<Props> = ({
+export const ReactStickyChildren: React.FC<Props> = ({
   threshold,
   initialStyle,
   intersectingStyle,
@@ -49,8 +49,8 @@ export const StickyReactChildren: React.FC<Props> = ({
 
             Object.keys(style).forEach((n) => {
               const computedStyleRule = entry.isIntersecting
-                ? computedStyle[n]
-                : style[n];
+                ? style[n]
+                : computedStyle[n];
 
               current.style[n] = computedStyleRule;
             });
