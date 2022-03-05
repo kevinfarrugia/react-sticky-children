@@ -30,10 +30,10 @@ The component aims to be lightweight and is only [1.2KB minified](https://bundle
 
 ### Recommendations
 
-- Use a `const` for your styles and place it outside of the component's render method.
+- Use a `const` for your styles and place it outside of the component's render method. If you are unable to place the `const` outside the component, use `useMemo` to avoid unecessary re-renderings.
 - If you are animating your component, use CSS transitions on `opacity` and `transform` to take advantage of GPU compositing. [How to create high-performance CSS animations](https://web.dev/animations-guide/).
 
-  **Good**
+  **Best**
 
 ```jsx
 const initialStyle = { opacity: 0 };
@@ -47,6 +47,30 @@ const MyComponent = () => (
     <MyComponent />
   </ReactStickyChildren>
 );
+```
+
+**Good**
+
+```jsx
+const MyComponent = ({ themeColor1, themeColor2 }) => {
+  const initialStyle = React.useMemo(
+    () => ({ backgroundColor: themeColor1 }),
+    [themeColor1]
+  );
+  const intersectingStyle = React.useMemo(
+    () => ({ backgroundColor: themeColor2 }),
+    [themeColor2]
+  );
+
+  return (
+    <ReactStickyChildren
+      initialStyle={initialStyle}
+      intersectingStyle={intersectingStyle}
+    >
+      <MyComponent />
+    </ReactStickyChildren>
+  );
+};
 ```
 
 **Bad**
