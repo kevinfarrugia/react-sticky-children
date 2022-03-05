@@ -1,6 +1,6 @@
 /* Demo CSS */
 .Wrapper {
-  background-color: palegreen;
+  background-color: #fafafa;
 }
 
 .Header {
@@ -8,7 +8,7 @@
 }
 
 .Container {
-  padding: 1em;
+  padding: 1em 0.5em;
   margin: 0;
   display: flex;
   flex-direction: column;

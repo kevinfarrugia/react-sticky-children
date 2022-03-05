@@ -41,60 +41,62 @@ function App() {
             </SyntaxHighlighter>
           </div>
         </div>
-        <ReactStickyChildren
-          className="TransitionOpacity"
-          top="240"
-          initialStyle={{ opacity: 0 }}
-          intersectingStyle={{ opacity: 1 }}
-          once
-        >
-          <UserCard
-            username="sadpanda370"
-            city="Noerre Alslev"
-            profilePicture="https://randomuser.me/api/portraits/thumb/men/47.jpg"
-          />
-        </ReactStickyChildren>
-        <ReactStickyChildren
-          className="TransitionOpacity"
-          top="240"
-          initialStyle={{ opacity: 0 }}
-          intersectingStyle={{ opacity: 1 }}
-          once
-        >
-          <UserCard
-            username="greentiger101"
-            city="Busselton"
-            profilePicture="https://randomuser.me/api/portraits/thumb/women/47.jpg"
-          />
-        </ReactStickyChildren>
-        <ReactStickyChildren
-          className="TransitionOpacity"
-          top="240"
-          initialStyle={{ opacity: 0 }}
-          intersectingStyle={{ opacity: 1 }}
-          once
-        >
-          <UserCard
-            username="blueelephant79"
-            city="North Charleston"
-            profilePicture="https://randomuser.me/api/portraits/thumb/men/21.jpg"
-          />
-        </ReactStickyChildren>
-        <ReactStickyChildren
-          className="TransitionOpacity"
-          top="240"
-          initialStyle={{ opacity: 0 }}
-          intersectingStyle={{ opacity: 1 }}
-          once
-        >
-          <UserCard
-            username="happywhale99"
-            city="اهواز"
-            profilePicture="https://randomuser.me/api/portraits/thumb/women/47.jpg"
-          />
-        </ReactStickyChildren>
-        <div className="Container Viewport100">
-          <p className="Text">Empty space to allow for scrolling.</p>
+        <div className="Container">
+          <ReactStickyChildren
+            className="TransitionOpacity"
+            top="240"
+            initialStyle={{ opacity: 0 }}
+            intersectingStyle={{ opacity: 1 }}
+            once
+          >
+            <UserCard
+              username="sadpanda370"
+              city="Noerre Alslev"
+              profilePicture="https://randomuser.me/api/portraits/thumb/men/47.jpg"
+            />
+          </ReactStickyChildren>
+          <ReactStickyChildren
+            className="TransitionOpacity"
+            top="240"
+            initialStyle={{ opacity: 0 }}
+            intersectingStyle={{ opacity: 1 }}
+            once
+          >
+            <UserCard
+              username="greentiger101"
+              city="Busselton"
+              profilePicture="https://randomuser.me/api/portraits/thumb/women/47.jpg"
+            />
+          </ReactStickyChildren>
+          <ReactStickyChildren
+            className="TransitionOpacity"
+            top="240"
+            initialStyle={{ opacity: 0 }}
+            intersectingStyle={{ opacity: 1 }}
+            once
+          >
+            <UserCard
+              username="blueelephant79"
+              city="North Charleston"
+              profilePicture="https://randomuser.me/api/portraits/thumb/men/21.jpg"
+            />
+          </ReactStickyChildren>
+          <ReactStickyChildren
+            className="TransitionOpacity"
+            top="240"
+            initialStyle={{ opacity: 0 }}
+            intersectingStyle={{ opacity: 1 }}
+            once
+          >
+            <UserCard
+              username="happywhale99"
+              city="اهواز"
+              profilePicture="https://randomuser.me/api/portraits/thumb/women/47.jpg"
+            />
+          </ReactStickyChildren>
+          <div className="Container Viewport100">
+            <p className="Text">Empty space to allow for scrolling.</p>
+          </div>
         </div>
       </div>
     </div>

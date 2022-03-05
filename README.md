@@ -2,7 +2,7 @@
 
 A [React](https://reactjs.org/) component that applies CSS styles as it approaches the top of the viewport.
 
-### [Demo]()
+### [Demo](https://react-sticky-children.vercel.app/) | [Playground](https://codesandbox.io/s/react-sticky-children-demo-2pgr6g)
 
 ## Installation:
 
@@ -24,7 +24,7 @@ import { ReactStickyChildren } from 'react-sticky-children';
 
 ## Performance
 
-The component aims to be lightweight and is only 1.4KB. Additionally, it does not incur any additional re-renders and uses CSS styles for a jank-free user experience.
+The component aims to be lightweight and is only [1.2KB minified](https://bundlephobia.com/package/react-sticky-children). Additionally, it does not incur any additional re-renders and uses CSS styles for a jank-free user experience.
 
 ### Recommendations
 

@@ -24,7 +24,7 @@ export const ReactStickyChildren: React.FC<Props> = ({
   const style = initialStyle || defaultInitialStyle;
   const computedStyle = intersectingStyle || defaultIntersectingStyle;
 
-  const rootMargin = `-${top}px 0px 0px 0px`;
+  const rootMargin = `${top}px 0px 0px 0px`;
 
   const keys = Object.keys(style)
     .map((n) => {
