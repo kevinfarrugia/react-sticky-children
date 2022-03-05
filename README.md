@@ -4,6 +4,8 @@ A [React](https://reactjs.org/) component that applies CSS styles as it approach
 
 ### [Demo](https://react-sticky-children.vercel.app/) | [Playground](https://codesandbox.io/s/react-sticky-children-demo-2pgr6g)
 
+![Demo](https://github.com/kevinfarrugia/react-sticky-fingers/blob/main/docs/demo.gif "Demonstration video showing components animating as the user scrolls downwards.")
+
 ## Installation:
 
 ```sh
