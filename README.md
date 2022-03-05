@@ -4,7 +4,7 @@ A [React](https://reactjs.org/) component that applies CSS styles as it approach
 
 ### [Demo](https://react-sticky-children.vercel.app/) | [Playground](https://codesandbox.io/s/react-sticky-children-demo-2pgr6g)
 
-![Demo](https://github.com/kevinfarrugia/react-sticky-fingers/blob/main/docs/demo.gif "Demonstration video showing components animating as the user scrolls downwards.")
+![Demo](https://github.com/kevinfarrugia/react-sticky-children/blob/main/docs/demo.gif?raw=true "Demonstration video showing components animating as the user scrolls downwards.")
 
 ## Installation:
 
@@ -97,4 +97,4 @@ Anyone and everyone is welcome to contribute to this project and leave feedback.
 
 ## License and Copyright
 
-This software is released under the terms of the [MIT license](https://github.com/kevinfarrugia/react-sticky-fingers/blob/main/LICENSE).
+This software is released under the terms of the [MIT license](https://github.com/kevinfarrugia/react-sticky-children/blob/main/LICENSE).
