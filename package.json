@@ -1,7 +1,7 @@
 {
   "name": "react-sticky-children",
   "version": "0.1.0",
-  "description": "ReactJS component that updates when another element exits the viewport.",
+  "description": "ReactJS component that applies CSS styles as it approaches the top of the viewport.",
   "keywords": [
     "react",
     "component",
