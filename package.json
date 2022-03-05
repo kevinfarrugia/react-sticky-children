@@ -1,6 +1,6 @@
 {
   "name": "react-sticky-children",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ReactJS component that applies CSS styles as it approaches the top of the viewport.",
   "keywords": [
     "react",
