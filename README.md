@@ -2,17 +2,15 @@
 
 A [React](https://reactjs.org/) component that applies CSS styles as it approaches the top of the viewport.
 
-### [Demo](#)
+### [Demo]()
 
-## Quick Start
-
-### Installation:
+## Installation:
 
 ```sh
 npm -i -s react-sticky-children
 ```
 
-### Usage
+## Usage
 
 ```
 import { ReactStickyChildren } from 'react-sticky-children';
@@ -24,15 +22,16 @@ import { ReactStickyChildren } from 'react-sticky-children';
 </ReactStickyChildren>
 ```
 
-### Performance
+## Performance
 
 The component aims to be lightweight and is only 1.4KB. Additionally, it does not incur any additional re-renders and uses CSS styles for a jank-free user experience.
 
-#### Recommendations
+### Recommendations
 
 - Use a `const` for your styles and place it outside of the component's render method.
+- If you are animating your component, use CSS transitions on `opacity` and `transform` to take advantage of GPU compositing. [How to create high-performance CSS animations](https://web.dev/animations-guide/).
 
-**Good**
+  **Good**
 
 ```jsx
 const initialStyle = { opacity: 0 };
@@ -61,17 +60,15 @@ const MyComponent = () => (
 );
 ```
 
-- If you are animating your component, use CSS transitions on `opacity` and `transform` to take advantage of GPU compositing. [How to create high-performance CSS animations](https://web.dev/animations-guide/).
-
-### Options
+## Options
 
 | Option            | Type          | Description                                                                                                                                                                                                                                                                                     |
 | ----------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| initialStyle      | CSSProperties | Initial style to be applied on the element when it is beneath or within the viewport. (Default: `{ opacity: 0, visibility: "hidden" }`)                                                                                                                                                        |
-| intersectingStyle | CSSProperties | Style to be applied on the element when it intersects with the top of the viewport. (Default: `{ opacity: 1, visibility: "visible" }`)                                                                                                                                                         |
+| initialStyle      | CSSProperties | Initial style to be applied on the element when it is beneath or within the viewport. (Default: `{ opacity: 0, visibility: "hidden" }`)                                                                                                                                                         |
+| intersectingStyle | CSSProperties | Style to be applied on the element when it intersects with the top of the viewport. (Default: `{ opacity: 1, visibility: "visible" }`)                                                                                                                                                          |
 | root              | Element       | The IntersectionObserver interface's read-only `root` property identifies the Element or Document whose bounds are treated as the bounding box of the viewport for the element which is the observer's target. If the `root` is null, then the bounds of the actual document viewport are used. |
 | top               | number        | Top margin from the root in px. (Default: `0`)                                                                                                                                                                                                                                                  |
-| once              | boolean       | Disconnect the IntersectionObserver after one intersection. (Default: `false`)                                                                                                                                                                                                                 |
+| once              | boolean       | Disconnect the IntersectionObserver after one intersection. (Default: `false`)                                                                                                                                                                                                                  |
 | className         | string        | CSS class attributed to be applied to the element.                                                                                                                                                                                                                                              |
 
 ## FAQs
