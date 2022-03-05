@@ -1,6 +1,6 @@
 # react-sticky-children
 
-A [React](https://reactjs.org/) component that applies CSS styles as it approaches the top of the viewport.
+A 1.2KB [React](https://reactjs.org/) component that applies CSS styles as it approaches the top of the viewport.
 
 ### [Demo](https://react-sticky-children.vercel.app/) | [Playground](https://codesandbox.io/s/react-sticky-children-demo-2pgr6g)
 
