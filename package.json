@@ -1,7 +1,7 @@
 {
   "name": "react-sticky-children",
   "version": "0.1.0",
-  "description": "ReactJS component that updates when another element intersects with the viewport.",
+  "description": "ReactJS component that updates when another element exits the viewport.",
   "keywords": [
     "react",
     "component",
@@ -11,10 +11,12 @@
   ],
   "source": "src/index.tsx",
   "main": "dist/react-sticky-children.cjs",
-  "module": "./dist/react-sticky-children.module.js",
-  "unpkg": "./dist/react-sticky-children.umd.js",
-  "types": "dist/react-sticky-children.d.ts",
+  "esmodule": "dist/react-sticky-children.esm.js",
+  "module": "dist/react-sticky-children.module.js",
+  "unpkg": "dist/react-sticky-children.umd.js",
+  "typings": "dist/react-sticky-children.d.ts",
   "sideEffects": false,
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -25,8 +27,11 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
     "build": "microbundle --name ReactStickyChildren --jsx React.createElement -f cjs,umd,es,modern",
+    "build:copy": "node scripts/copy",
+    "build:copy-demo": "node scripts/copy-demo",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build:demo": "npm run build && npm run build:copy && npm run build:copy-demo"
   },
   "author": {
     "name": "Kevin Farrugia",

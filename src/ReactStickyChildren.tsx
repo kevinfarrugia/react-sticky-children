@@ -13,7 +13,9 @@ const defaultIntersectingStyle: React.CSSProperties = {
 };
 
 export const ReactStickyChildren: React.FC<Props> = ({
-  threshold,
+  top = 0,
+  root,
+  once,
   initialStyle,
   intersectingStyle,
   children,
@@ -21,6 +23,8 @@ export const ReactStickyChildren: React.FC<Props> = ({
 }) => {
   const style = initialStyle || defaultInitialStyle;
   const computedStyle = intersectingStyle || defaultIntersectingStyle;
+
+  const rootMargin = `-${top}px 0px 0px 0px`;
 
   const keys = Object.keys(style)
     .map((n) => {
@@ -47,17 +51,24 @@ export const ReactStickyChildren: React.FC<Props> = ({
           if (stickyEl.current) {
             const { current } = stickyEl;
 
+            const isAboveViewport =
+              !entry.isIntersecting && entry.boundingClientRect.top < top;
+
             Object.keys(style).forEach((n) => {
-              const computedStyleRule = entry.isIntersecting
+              const computedStyleRule = !isAboveViewport
                 ? style[n]
                 : computedStyle[n];
 
               current.style[n] = computedStyleRule;
             });
+
+            if (once && isAboveViewport) {
+              observer.disconnect();
+            }
           }
         });
       },
-      { threshold }
+      { threshold: 1, rootMargin, root }
     );
 
     if (dummyElement && dummyElement.current) {
@@ -67,14 +78,14 @@ export const ReactStickyChildren: React.FC<Props> = ({
     return () => {
       observer.disconnect();
     };
-  }, [computedStyle, style, threshold]);
+  }, [computedStyle, style, rootMargin, root, once, top]);
 
   return (
     <>
       <div ref={dummyElement} />
-      <section ref={stickyEl} style={style} className={className}>
-        <div>{children}</div>
-      </section>
+      <div ref={stickyEl} style={style} className={className}>
+        {children}
+      </div>
     </>
   );
 };
