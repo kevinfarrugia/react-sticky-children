@@ -29,6 +29,7 @@
     "build": "microbundle --name ReactStickyChildren --jsx React.createElement -f cjs,umd,es,modern",
     "build:copy": "node scripts/copy",
     "build:copy-demo": "node scripts/copy-demo",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "prepare": "husky install",
     "build:demo": "npm run build && npm run build:copy && npm run build:copy-demo"
   },
