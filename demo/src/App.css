@@ -42,6 +42,40 @@
   min-height: 100vh;
 }
 
+.Hero {
+  background-color: black;
+  position: relative;
+  height: 598px;
+  overflow: hidden;
+}
+
+.HeroImage {
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.HeroTitle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 2;
+  font-size: 2em;
+}
+
 /* Styling Examples */
 .Sticky {
   position: sticky;
@@ -53,4 +87,12 @@
 
 .TransitionOpacity {
   transition: opacity 300ms ease-in-out;
+}
+
+.TransitionOpacityLong {
+  transition: opacity 1000ms linear;
+}
+
+.TransitionTransform {
+  transition: opacity 1000ms ease-in-out, transform 1000ms ease-in-out;
 }

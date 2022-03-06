@@ -1,9 +1,10 @@
 import "./App.css";
+import Hero from "./Hero/hero.jpg";
 import { ReactStickyChildren } from "react-sticky-children";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vs } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { DEMO_1, DEMO_2, DEMO_3 } from "./constants";
+import { DEMO_1, DEMO_2, DEMO_3, DEMO_4 } from "./constants";
 import UserCard from "./UserCard";
 
 function App() {
@@ -94,9 +95,52 @@ function App() {
               profilePicture="https://randomuser.me/api/portraits/thumb/women/47.jpg"
             />
           </ReactStickyChildren>
-          <div className="Container Viewport100">
-            <p className="Text">Empty space to allow for scrolling.</p>
+        </div>
+        <div className="Container Viewport25">
+          <div className="Code">
+            <SyntaxHighlighter language="jsx" showLineNumbers style={vs}>
+              {DEMO_4}
+            </SyntaxHighlighter>
           </div>
+        </div>
+        <div className="Hero">
+          <ReactStickyChildren
+            className="TransitionOpacityLong"
+            top="240"
+            initialStyle={{ opacity: 0 }}
+            intersectingStyle={{ opacity: 1 }}
+            once
+          >
+            <img
+              src={Hero}
+              alt="3D render of blue and red clouds"
+              width="1919"
+              height="598"
+              className="HeroImage"
+            />
+          </ReactStickyChildren>
+          <ReactStickyChildren
+            className="HeroTitle TransitionTransform"
+            top="240"
+            initialStyle={{ opacity: 0, transform: "translateX(-100%)" }}
+            intersectingStyle={{ opacity: 1, transform: "translateX(0)" }}
+            once
+          >
+            <h1>Amazing Effect</h1>
+          </ReactStickyChildren>
+        </div>
+        <p className="Text">
+          Photo by{" "}
+          <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Pawel Czerwinski
+          </a>{" "}
+          on{" "}
+          <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+            Unsplash
+          </a>
+        </p>
+        <div className="Container Viewport100">
+          <p className="Text">Empty space to allow for scrolling.</p>
         </div>
       </div>
     </div>
